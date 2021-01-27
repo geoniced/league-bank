@@ -58,9 +58,54 @@
         <a href="#" class="banner__credit-button">Рассчитать кредит</a>
       </section>
     </header>
-    <main class="converter">
 
+    <main class="page-content">
+      <h2 class="page-content__title">Конвертер валют</h2>
+
+      <section class="page-content__currency-convert currency-convert">
+        <h3 class="currency-convert visually-hidden">Форма конвертации</h3>
+
+        <form class="currency-convert__convert-form convert-form">
+          <label class="convert-form__label" for="my-currency">У меня есть</label>
+          <input class="convert-form__number-input" type="number" id="my-currency" name="my-currency">
+          <select class="convert-form__currency-type" name="my-currency-type" id="my-currency-type">
+            <option value="rub">RUB</option>
+          </select>
+
+          <label class="convert-form__label" for="converted-currency">Хочу приобрести</label>
+          <input class="convert-form__number-input" type="number" id="converted-currency" name="converted-currency">
+          <select class="convert-form__currency-type" name="converted-currency-type" id="converted-currency-type">
+            <option value="rub">RUB</option>
+          </select>
+
+          <input class="convert-form__currency-by-type" type="date" name="currency-by-date" id="currency-by-date">
+
+          <button class="convert-form__save" type="submit">Сохранить результат</button>
+        </form>
+      </section>
+
+      <section class="page-content__convert-history convert-history">
+        <h3 class="convert-history__title">История конвертации</h3>
+
+        <ul class="convert-history__list">
+          <li class="convert-history__item">
+            <time datetime="2020-11-25">25.11.2020</time>
+
+            <div class="convert-history__operation">
+              <span class="convert-history__from">1000 RUB</span>
+
+              <!-- TODO: svg -->
+              <span class="convert-history__arrow-icon">-></span>
+
+              <span class="convert-history__to">13,1234 USD</span>
+            </div>
+          </li>
+        </ul>
+
+        <button class="convert-history__clear" type="button">Очистить историю</button>
+      </section>
     </main>
+
     <footer class="footer">
       <div class="footer__contact-address contact-address">
         <a href="#" class="contact-address__logo logo">
