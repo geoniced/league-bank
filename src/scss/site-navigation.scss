@@ -6,6 +6,10 @@
   line-height: 18.75px;
 
   list-style-type: none;
+
+  &--vertical {
+    font-weight: 500;
+  }
 }
 
 .site-navigation__link {
