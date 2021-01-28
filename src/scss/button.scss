@@ -10,11 +10,5 @@
     background-color: $white-main;
   }
 
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.4;
-  }
+  @include basic-interactions;
 }

@@ -2,7 +2,10 @@
   font-size: 20px;
   color: $black;
 
-  &:hover {
-    opacity: 0.6;
-  }
+  @include basic-interactions;
+}
+
+.logo__image {
+  width: 28px;
+  height: 25px;
 }

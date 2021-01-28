@@ -3,7 +3,10 @@
   line-height: 18.75px;
   color: $black;
 
-  &:hover {
-    opacity: 0.6;
-  }
+  @include basic-interactions;
+}
+
+.login__icon {
+  width: 20px;
+  height: 22px;
 }

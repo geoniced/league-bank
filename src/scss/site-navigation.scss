@@ -15,7 +15,5 @@
 .site-navigation__link {
   color: $black;
 
-  &:hover {
-    opacity: 0.6;
-  }
+  @include basic-interactions;
 }

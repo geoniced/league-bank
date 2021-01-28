@@ -5,3 +5,27 @@
 
   // list-style-type: none;
 }
+
+.socials__icon {
+  &--fb {
+    width: 9px;
+    height: 16px;
+  }
+
+  &--instagram {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--twitter {
+    width: 16px;
+    height: 13px;
+  }
+
+  &--yt {
+    width: 16px;
+    height: 13px;
+  }
+
+  @include basic-interactions;
+}

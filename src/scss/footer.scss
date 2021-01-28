@@ -8,9 +8,7 @@
   font-weight: $text-half-bold;
   color: $black;
 
-  &:hover {
-    opacity: 0.6;
-  }
+  @include basic-interactions;
 }
 
 .footer__phone-description {

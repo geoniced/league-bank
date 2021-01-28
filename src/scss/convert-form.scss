@@ -16,9 +16,23 @@
   line-height: 42px;
 }
 
-.convert-form__currency-by-type {
+.convert-form__change-currency {
+  width: 50px;
+  height: 32px;
+
+  @include basic-interactions;
+}
+
+.convert-form__currency-by-date {
   font-size: 24px;
   line-height: 34px;
+}
+
+.convert-form__calendar-icon {
+  width: 39px;
+  height: 42px;
+
+  @include basic-interactions;
 }
 
 .convert-form__save {
