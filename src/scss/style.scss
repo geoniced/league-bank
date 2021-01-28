@@ -3,11 +3,19 @@
 @import 'normalize.scss';
 @import 'variables.scss';
 @import 'scaffolding.scss';
+
+@import 'button.scss';
 @import 'header.scss';
 @import 'logo.scss';
 @import 'site-navigation.scss';
 @import 'login.scss';
 @import 'banner.scss';
+
+@import 'page-content.scss';
+@import 'currency-convert.scss';
+@import 'convert-form.scss';
+@import 'convert-history.scss';
+
 @import 'footer.scss';
 @import 'contact-address.scss';
 @import 'socials.scss';

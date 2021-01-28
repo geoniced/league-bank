@@ -55,7 +55,7 @@
       <section class="header__banner banner">
         <h1 class="banner__title">Лига Банк</h1>
         <p class="banner__description">Кредиты на любой случай</p>
-        <a href="#" class="banner__credit-button">Рассчитать кредит</a>
+        <a href="#" class="banner__credit-button button button--white">Рассчитать кредит</a>
       </section>
     </header>
 
@@ -67,20 +67,20 @@
 
         <form class="currency-convert__convert-form convert-form">
           <label class="convert-form__label" for="my-currency">У меня есть</label>
-          <input class="convert-form__number-input" type="number" id="my-currency" name="my-currency">
+          <input class="convert-form__number-input" type="number" id="my-currency" name="my-currency" value="1000">
           <select class="convert-form__currency-type" name="my-currency-type" id="my-currency-type">
             <option value="rub">RUB</option>
           </select>
 
           <label class="convert-form__label" for="converted-currency">Хочу приобрести</label>
-          <input class="convert-form__number-input" type="number" id="converted-currency" name="converted-currency">
+          <input class="convert-form__number-input" type="number" id="converted-currency" name="converted-currency" value="13.1234">
           <select class="convert-form__currency-type" name="converted-currency-type" id="converted-currency-type">
             <option value="rub">RUB</option>
           </select>
 
           <input class="convert-form__currency-by-type" type="date" name="currency-by-date" id="currency-by-date">
 
-          <button class="convert-form__save" type="submit">Сохранить результат</button>
+          <button class="convert-form__save button" type="submit">Сохранить результат</button>
         </form>
       </section>
 
@@ -102,7 +102,7 @@
           </li>
         </ul>
 
-        <button class="convert-history__clear" type="button">Очистить историю</button>
+        <button class="convert-history__clear button" type="button">Очистить историю</button>
       </section>
     </main>
 

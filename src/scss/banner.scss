@@ -28,15 +28,4 @@
 .banner__credit-button {
   font-size: 18px;
   line-height: 21px;
-
-  color: $black;
-  background-color: $white-main;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.4;
-  }
 }
