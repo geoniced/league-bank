@@ -19,11 +19,40 @@
 }
 
 .footer__site-navigation {
-  margin-right: 80px;
+  margin-right: 78px;
 }
 
 .footer__phone-contacts {
-  margin-right: 80px;
+  position: relative;
+
+  margin-right: 72px;
+
+  &--mobile {
+    width: 280px;
+    padding-left: 29px;
+  }
+
+  &--base {
+    padding-left: 33px;
+  }
+}
+
+.footer__mobile-phone-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+
+  width: 10px;
+  height: 16px;
+}
+
+.footer__base-phone-icon {
+  position: absolute;
+  top: 1px;
+  left: 0;
+
+  width: 16px;
+  height: 16px;
 }
 
 .footer__socials  {
@@ -31,6 +60,9 @@
 }
 
 .footer__phone {
+  display: inline-flex;
+  margin-bottom: 3px;
+
   font-size: 16px;
   line-height: 22px;
   font-weight: $text-half-bold;

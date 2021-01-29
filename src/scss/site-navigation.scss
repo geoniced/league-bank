@@ -4,6 +4,7 @@
 
   margin: 0;
   padding: 0;
+  width: 230px;
 
   font-size: 16px;
   line-height: 18.75px;
@@ -28,6 +29,11 @@
 
 .site-navigation--vertical .site-navigation__item {
   margin-right: 0;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .site-navigation__link {
