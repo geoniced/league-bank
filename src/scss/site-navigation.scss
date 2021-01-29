@@ -1,4 +1,7 @@
 .site-navigation {
+  display: flex;
+  flex-direction: row;
+
   margin: 0;
   padding: 0;
 
@@ -8,12 +11,28 @@
   list-style-type: none;
 
   &--vertical {
+    flex-direction: column;
     font-weight: $text-half-bold;
+  }
+}
+
+.site-navigation__item {
+  margin: 0;
+  margin-right: 25px;
+
+  &:last-of-type {
+    margin-right: 0;
   }
 }
 
 .site-navigation__link {
   color: $black;
 
-  @include basic-interactions;
+  @include basic-hover;
+
+  &:active,
+  &--active {
+    opacity: 1;
+    color: $blue-main;
+  }
 }

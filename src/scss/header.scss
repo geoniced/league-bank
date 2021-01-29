@@ -1,0 +1,7 @@
+.header {
+  @include centered-layout;
+}
+
+.header__main-navigation {
+  margin: 0 98px;
+}

@@ -1,10 +1,22 @@
-@mixin basic-interactions {
+@mixin centered-layout {
+  width: $desktop-width;
+  margin: 0 auto;
+}
+
+@mixin basic-hover {
   &:hover,
   &:focus {
     opacity: 0.8;
   }
+}
 
+@mixin basic-active {
   &:active {
     opacity: 0.4;
   }
+}
+
+@mixin basic-interactions {
+  @include basic-hover;
+  @include basic-active;
 }

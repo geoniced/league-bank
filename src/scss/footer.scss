@@ -1,4 +1,6 @@
 .footer {
+  @include centered-layout;
+
   background-color: $white-main;
 }
 
