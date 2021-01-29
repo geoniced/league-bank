@@ -100,3 +100,19 @@
   line-height: 21px;
   border-radius: 4px;
 }
+
+.banner__card {
+  z-index: 1;
+  position: absolute;
+
+  &--white {
+    top: 80px;
+    right: -52px;
+  }
+
+  &--black {
+    top: 138px;
+    right: 57px;
+  }
+
+}
