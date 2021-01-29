@@ -3,13 +3,15 @@
 
   background-color: $blue-main;
   background-image: linear-gradient(
-    to bottom,
-    rgba(32, 39, 179, 0) 37%,
-    #2027B3 100%
+    180.24deg,
+    rgba(32, 39, 179, 0) 36.31%,
+    #2027B3 99.79%
   );
 }
 
 .banner__wrapper {
+  position: relative;
+
   margin: 0;
   margin-left: 150px;
   margin-right: 298px;
@@ -20,9 +22,48 @@
   padding-left: 118px;
 
   background-color: $blue-main;
+
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    width: 150px;
+    height: 269px;
+
+    background-image: linear-gradient(
+      183.47deg,
+      rgba(56, 65, 255, 0) 66.3%,
+      #3841FF 97.14%
+    );
+  }
+
+  &::after {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: block;
+    width: 270px;
+    height: 269px;
+
+    background-image: linear-gradient(
+      183.47deg,
+      rgba(56, 65, 255, 0) 27.26%,
+      #3841FF 97.14%
+    );
+  }
 }
 
 .banner__title {
+  z-index: 1;
+  position: relative;
+
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
@@ -33,6 +74,9 @@
 }
 
 .banner__description {
+  z-index: 1;
+  position: relative;
+
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
@@ -43,6 +87,9 @@
 }
 
 .banner__credit-button {
+  z-index: 1;
+  position: relative;
+
   display: inline-flex;
   padding-top: 16px;
   padding-right: 36px;
