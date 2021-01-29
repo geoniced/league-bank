@@ -4,7 +4,6 @@
 
   margin: 0;
   padding: 0;
-  width: 230px;
 
   font-size: 16px;
   line-height: 18.75px;
@@ -13,6 +12,8 @@
 
   &--vertical {
     flex-direction: column;
+    width: 230px;
+
     font-weight: $text-half-bold;
     line-height: 22.4px;
   }
