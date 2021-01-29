@@ -2,7 +2,22 @@
   @include centered-layout;
 }
 
+.page-content__wrapper {
+  margin: 0 98px;
+  padding: 0;
+  padding-top: 60px;
+  padding-bottom: 110px;
+}
+
+.page-content__currency-convert {
+  margin-bottom: 100px;
+}
+
 .page-content__title {
+  margin: 0;
+  margin-bottom: 70px;
+  padding: 0;
+
   font-size: 41px;
   line-height: 57px;
 }

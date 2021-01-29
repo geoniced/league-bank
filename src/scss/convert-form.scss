@@ -1,4 +1,23 @@
+.convert-form__rows-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 85px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.convert-form__currency-and-type-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 .convert-form__label {
+  display: block;
+  margin-bottom: 30px;
+
   font-size: 22px;
   line-height: 31px;
   font-weight: $text-half-bold;
@@ -17,6 +36,8 @@
 }
 
 .convert-form__change-currency {
+  align-self: flex-end; // TODO: It is temporary
+
   width: 50px;
   height: 32px;
 
