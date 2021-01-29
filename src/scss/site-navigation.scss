@@ -13,6 +13,7 @@
   &--vertical {
     flex-direction: column;
     font-weight: $text-half-bold;
+    line-height: 22.4px;
   }
 }
 
@@ -23,6 +24,10 @@
   &:last-of-type {
     margin-right: 0;
   }
+}
+
+.site-navigation--vertical .site-navigation__item {
+  margin-right: 0;
 }
 
 .site-navigation__link {

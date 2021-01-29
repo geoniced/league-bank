@@ -4,6 +4,31 @@
   background-color: $white-main;
 }
 
+.footer__wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-left: 98px;
+  margin-right: 98px;
+  padding-top: 49px;
+}
+
+.footer__contact-address {
+  margin-right: 80px;
+}
+
+.footer__site-navigation {
+  margin-right: 80px;
+}
+
+.footer__phone-contacts {
+  margin-right: 80px;
+}
+
+.footer__socials  {
+  margin-right: 0;
+}
+
 .footer__phone {
   font-size: 16px;
   line-height: 22px;
