@@ -1,4 +1,10 @@
 .logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 25px;
+  padding-left: 34px;
+
   font-size: 20px;
   color: $black;
 
@@ -6,6 +12,9 @@
 }
 
 .logo__image {
+  position: absolute;
+  top: -5px;
+  left: 0;
   width: 28px;
   height: 25px;
 }
