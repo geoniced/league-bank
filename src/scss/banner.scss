@@ -1,25 +1,6 @@
 .banner {
-  min-height: 400px;
-
-  background-color: $blue-main;
-  background-image: linear-gradient(
-    180.24deg,
-    rgba(32, 39, 179, 0) 36.31%,
-    #2027B3 99.79%
-  );
-}
-
-.banner__wrapper {
   position: relative;
-
-  margin: 0;
-  margin-left: 150px;
-  margin-right: 298px;
-  padding: 0;
-  padding-top: 115px;
-  padding-right: 350px;
-  padding-bottom: 78px;
-  padding-left: 118px;
+  min-height: 400px;
 
   background-color: $blue-main;
 
@@ -32,12 +13,12 @@
 
     display: block;
     width: 150px;
-    height: 269px;
+    height: 400px;
 
     background-image: linear-gradient(
-      183.47deg,
-      rgba(56, 65, 255, 0) 66.3%,
-      #3841FF 97.14%
+      180.24deg,
+      rgba(32, 39, 179, 0) 36.31%,
+      #2027B3 99.79%
     );
   }
 
@@ -49,15 +30,49 @@
     right: 0;
 
     display: block;
-    width: 270px;
-    height: 269px;
+    width: 298px;
+    height: 400px;
 
     background-image: linear-gradient(
+      180.24deg,
+      rgba(32, 39, 179, 0) 32.89%,
+      #2027B3 99.79%
+    );
+  }
+}
+
+.banner__wrapper {
+  z-index: 1;
+  position: relative;
+
+  margin: 0;
+  padding: 0;
+  padding-top: 115px;
+  padding-right: 648px;
+  padding-bottom: 78px;
+  padding-left: 268px;
+
+  background-image:
+    url("../img/black-card.png"),
+    url("../img/white-card.png"),
+    linear-gradient(
+      183.47deg,
+      rgba(56, 65, 255, 0) 66.3%,
+      #3841FF 97.14%
+    ),
+    linear-gradient(
       183.47deg,
       rgba(56, 65, 255, 0) 27.26%,
       #3841FF 97.14%
     );
-  }
+
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    right 355px top 138px,
+    right 246px top 80px,
+    left 150px bottom 0,
+    right 298px bottom 0;
+  background-size: auto, auto, 150px 269px, 270px 269px;
 }
 
 .banner__title {
