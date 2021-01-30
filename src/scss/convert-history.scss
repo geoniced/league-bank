@@ -2,6 +2,14 @@
   padding: 40px 70px;
 
   background-color: $white-main;
+  background-image: url("../img/line-with-shadow.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* Для случая, если нужно, чтобы этот фон тянулся вместе с контейнером
+  background-size: contain;
+  background-origin: content-box;
+  */
 }
 
 .convert-history__title {
@@ -28,12 +36,51 @@
 .convert-history__item {
   display: flex;
   flex-direction: row;
+  margin-bottom: 30px;
 
   font-size: 18px;
   line-height: 23px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.convert-history__datetime {
+  margin-right: 40px;
+}
+
+.convert-history__operation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.convert-history__from {
+  margin: 0;
+  padding-right: 13px;
+}
+
+.convert-history__arrow-icon {
+  width: 41px;
+  height: 18px;
+  margin: 0;
+
+  background-image: url("../img/arrow-right.svg");
+  background-repeat: no-repeat;
+}
+
+.convert-history__to {
+  margin: 0;
+  padding-left: 13px;
 }
 
 .convert-history__clear {
+  padding-top: 16px;
+  padding-right: 29px;
+  padding-bottom: 16px;
+  padding-left: 28px;
+
   font-size: 16px;
   line-height: 19px;
 }
