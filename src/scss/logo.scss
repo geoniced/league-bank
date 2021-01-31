@@ -3,8 +3,10 @@
   display: flex;
   align-items: center;
   min-height: 25px;
-  padding-left: 34px;
+  padding-left: 37px;
 
+  /* Work Sans не работает для кириллики */
+  font-family: Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: $black;
@@ -14,8 +16,8 @@
 
 .logo__image {
   position: absolute;
-  top: -5px;
-  left: 0;
+  top: -7px;
+  left: -1px;
   width: 28px;
-  height: 25px;
+  height: 26px;
 }

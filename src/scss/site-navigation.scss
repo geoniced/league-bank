@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
 
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0;
 
   font-size: 16px;
@@ -12,7 +13,6 @@
 
   &--vertical {
     flex-direction: column;
-    width: 230px;
 
     font-weight: $text-half-bold;
     line-height: 22.4px;
@@ -30,7 +30,7 @@
 
 .site-navigation--vertical .site-navigation__item {
   margin-right: 0;
-  margin-bottom: 20px;
+  margin-bottom: 9px;
 
   &:last-of-type {
     margin-bottom: 0;

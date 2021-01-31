@@ -10,36 +10,41 @@
   margin: 0;
   margin-left: 98px;
   margin-right: 98px;
-  padding-top: 49px;
+  padding-top: 54px;
   padding-bottom: 49px;
 }
 
 .footer__contact-address {
-  margin-right: 80px;
+  width: 260px;
+  margin-right: 73px;
 }
 
 .footer__site-navigation {
-  margin-right: 78px;
+  width: 160px;
+  margin-right: 64px;
 }
 
 .footer__phone-contacts {
   position: relative;
 
-  margin-right: 72px;
-
   &--mobile {
-    width: 280px;
+    width: 205px;
+    margin-right: 71px;
+    padding-top: 3px;
     padding-left: 29px;
   }
 
   &--base {
+    width: 160px;
+    margin-right: 75px;
+    padding-top: 2px;
     padding-left: 33px;
   }
 }
 
 .footer__mobile-phone-icon {
   position: absolute;
-  top: 1px;
+  top: 5px;
   left: 0;
 
   width: 10px;
@@ -48,7 +53,7 @@
 
 .footer__base-phone-icon {
   position: absolute;
-  top: 1px;
+  top: 5px;
   left: 0;
 
   width: 16px;
@@ -61,7 +66,7 @@
 
 .footer__phone {
   display: inline-flex;
-  margin-bottom: 3px;
+  margin-bottom: 1px;
 
   font-size: 16px;
   line-height: 22px;
