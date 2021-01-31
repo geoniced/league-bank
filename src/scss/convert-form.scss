@@ -17,7 +17,7 @@
 
 .convert-form__label {
   display: block;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 
   font-size: 22px;
   line-height: 31px;
@@ -49,7 +49,7 @@
 
 .convert-form__currency-type {
   width: 120px;
-  padding-left: 18px;
+  padding-left: 17px;
   padding-right: 18px;
 
   font-size: 30px;
@@ -58,7 +58,7 @@
   border-radius: 4px;
   background-image: url("../img/arrow-down.svg");
   background-repeat: no-repeat;
-  background-position: right 13px center;
+  background-position: right 15px center;
 
   -moz-appearance: none; /* Firefox */
   -webkit-appearance: none; /* Safari and Chrome */
@@ -68,8 +68,8 @@
 .convert-form__change-currency {
   align-self: flex-end; // TODO: It is temporary
 
-  width: 50px;
-  height: 32px;
+  width: 56px;
+  height: 36px;
   margin-bottom: 15px;
 
   @include basic-interactions;
@@ -118,7 +118,7 @@
   padding-top: 18px;
   padding-right: 102px;
   padding-bottom: 17px;
-  padding-left: 101px;
+  padding-left: 102px;
 
   font-size: 18px;
   line-height: 25px;
