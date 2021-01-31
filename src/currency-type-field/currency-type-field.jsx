@@ -22,7 +22,7 @@ const CurrencyTypeField = (props) => {
         return (
           <option
             value={currencyType}
-
+            key={`currency-type-${i}`}
           >
               {currencyType}
           </option>
@@ -34,7 +34,7 @@ const CurrencyTypeField = (props) => {
 
 CurrencyTypeField.propTypes = {
   changeHandler: PropTypes.func,
-  defaultValue: PropTypes.number.isRequired,
+  defaultValue: PropTypes.string.isRequired,
   fieldId: PropTypes.string.isRequired,
 };
 
