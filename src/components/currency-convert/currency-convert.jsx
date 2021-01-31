@@ -1,5 +1,18 @@
 import {useState} from "react";
 import {CurrencyRate} from "../../const";
+import CurrencyTypeField from "../../currency-type-field/currency-type-field";
+import ConvertNumberInput from "../convert-number-input/convert-number-input";
+
+const FIELD_NAMES = {
+  MY_CURRENCY: {
+    NUMBER: `my-currency`,
+    SELECT: `my-currency-type`,
+  },
+  CONVERTED_CURRENCY: {
+    NUMBER: `converted-currency`,
+    SELECT: `converted-currency-type`,
+  },
+};
 
 const CurrencyConvert = () => {
   const [myCurrency, setMyCurrency] = useState(0);
@@ -9,7 +22,7 @@ const CurrencyConvert = () => {
   const [convertedCurrencyType, setConvertedCurrencyType] = useState(`USD`);
 
   const onMyCurrencyChange = (evt) => {
-    const currentValue = evt.target.value;
+    const currentValue = Number(evt.target.value);
     setMyCurrency(currentValue);
 
     setConvertedCurrency(currentValue * CurrencyRate[myCurrencyType][convertedCurrencyType]);
@@ -37,24 +50,16 @@ const CurrencyConvert = () => {
             <label className="convert-form__label" htmlFor="my-currency">У меня есть</label>
 
             <div className="convert-form__currency-and-type-wrapper">
-              <input
-                onChange={onMyCurrencyChange}
+              <ConvertNumberInput
+                changeHandler={onMyCurrencyChange}
                 value={myCurrency}
-                className="convert-form__number-input"
-                type="number"
-                id="my-currency"
-                name="my-currency"
+                fieldId={FIELD_NAMES.MY_CURRENCY.NUMBER}
               />
-              <select
-                onChange={onMyCurrencyTypeChange}
-                className="convert-form__currency-type"
-                name="my-currency-type"
-                id="my-currency-type"
+              <CurrencyTypeField
+                changeHandler={onMyCurrencyTypeChange}
                 defaultValue={myCurrencyType}
-              >
-                <option value="RUB">RUB</option>
-                <option value="USD">USD</option>
-              </select>
+                fieldId={FIELD_NAMES.MY_CURRENCY.SELECT}
+              />
             </div>
           </div>
 
@@ -66,23 +71,15 @@ const CurrencyConvert = () => {
             <label className="convert-form__label" htmlFor="converted-currency">Хочу приобрести</label>
 
             <div className="convert-form__currency-and-type-wrapper">
-              <input
+              <ConvertNumberInput
                 value={convertedCurrency}
-                className="convert-form__number-input"
-                type="number"
-                id="converted-currency"
-                name="converted-currency"
+                fieldId={FIELD_NAMES.CONVERTED_CURRENCY.NUMBER}
               />
-              <select
-                onChange={onConvertedCurrencyTypeChange}
-                className="convert-form__currency-type"
-                name="converted-currency-type"
-                id="converted-currency-type"
+              <CurrencyTypeField
+                changeHandler={onConvertedCurrencyTypeChange}
                 defaultValue={convertedCurrencyType}
-              >
-                <option value="RUB">RUB</option>
-                <option value="USD">USD</option>
-              </select>
+                fieldId={FIELD_NAMES.CONVERTED_CURRENCY.SELECT}
+              />
             </div>
           </div>
         </div>
