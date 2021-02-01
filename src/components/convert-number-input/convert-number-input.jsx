@@ -5,6 +5,7 @@ const ConvertNumberInput = (props) => {
     changeHandler,
     value,
     fieldId,
+    readOnly,
   } = props;
 
   return (
@@ -15,6 +16,7 @@ const ConvertNumberInput = (props) => {
       type="number"
       id={fieldId}
       name={fieldId}
+      readOnly={readOnly}
     />
   )
 };
@@ -23,6 +25,7 @@ ConvertNumberInput.propTypes = {
   changeHandler: PropTypes.func,
   value: PropTypes.number.isRequired,
   fieldId: PropTypes.string.isRequired,
+  readOnly: PropTypes.bool,
 };
 
 export default ConvertNumberInput;

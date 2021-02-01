@@ -47,7 +47,7 @@ const CurrencyConvert = () => {
       <form className="currency-convert__convert-form convert-form">
         <div className="convert-form__rows-wrapper">
           <div className="convert-form__currency-wrapper">
-            <label className="convert-form__label" htmlFor="my-currency">У меня есть</label>
+            <label className="convert-form__label" htmlFor={FIELD_NAMES.MY_CURRENCY.NUMBER}>У меня есть</label>
 
             <div className="convert-form__currency-and-type-wrapper">
               <ConvertNumberInput
@@ -68,12 +68,13 @@ const CurrencyConvert = () => {
           </svg>
 
           <div className="convert-form__currency-wrapper">
-            <label className="convert-form__label" htmlFor="converted-currency">Хочу приобрести</label>
+            <label className="convert-form__label" htmlFor={FIELD_NAMES.CONVERTED_CURRENCY.NUMBER}>Хочу приобрести</label>
 
             <div className="convert-form__currency-and-type-wrapper">
               <ConvertNumberInput
                 value={convertedCurrency}
                 fieldId={FIELD_NAMES.CONVERTED_CURRENCY.NUMBER}
+                readOnly
               />
               <CurrencyTypeField
                 changeHandler={onConvertedCurrencyTypeChange}
