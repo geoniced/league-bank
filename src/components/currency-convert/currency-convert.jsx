@@ -1,6 +1,6 @@
 import {createRef, useState} from "react";
 import PropTypes from "prop-types";
-import {Currency, CurrencyRate} from "../../const";
+import {Currency, CurrencyRate, formatDateDashed} from "../../const";
 import CurrencyTypeField from "../currency-type-field/currency-type-field";
 import CalendarField from "../calendar-field/calendar-field";
 import ConvertNumberInput from "../convert-number-input/convert-number-input";
@@ -19,7 +19,7 @@ const FIELD_NAMES = {
 };
 
 const CurrencyConvert = (props) => {
-  const {saveResultAction} = props;
+  const {currencies, saveResultAction} = props;
 
   const calendarRef = createRef();
 
@@ -31,9 +31,11 @@ const CurrencyConvert = (props) => {
 
   const onMyCurrencyChange = (evt) => {
     const currentValue = Number(evt.target.value);
+    const chosenDate = formatDateDashed(calendarRef.current.value);
+
     setMyCurrency(currentValue);
 
-    setConvertedCurrency(currentValue * CurrencyRate[myCurrencyType][convertedCurrencyType]);
+    setConvertedCurrency(currentValue * currencies[chosenDate][myCurrencyType][convertedCurrencyType]);
   };
 
   const onMyCurrencyTypeChange = (evt) => {
@@ -133,6 +135,10 @@ CurrencyConvert.propTypes = {
   saveResultAction: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = (state) => ({
+  currencies: state.currencies,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   saveResultAction(date, from, to) {
     dispatch(saveResult(date, from, to));
@@ -140,4 +146,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export {CurrencyConvert};
-export default connect(null, mapDispatchToProps)(CurrencyConvert);
+export default connect(mapStateToProps, mapDispatchToProps)(CurrencyConvert);

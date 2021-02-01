@@ -1,3 +1,12 @@
+import dayjs from "dayjs";
+
+export const APIRoute = {
+  CONVERT: `/convert`
+};
+
+export const formatDateNowDashed = () => dayjs().format(`YYYY-MM-DD`);
+export const formatDateDashed = (date) => dayjs(date).format(`YYYY-MM-DD`);
+
 export const Currency = {
   RUB: `RUB`,
   USD: `USD`,

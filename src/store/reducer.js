@@ -4,6 +4,7 @@ import {ActionType} from "./actions";
 
 const initialState = {
   history: HISTORY,
+  currencies: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +21,20 @@ const reducer = (state = initialState, action) => {
 
       return extend(state, {
         history: newHistory,
+      });
+    case ActionType.CREATE_RATE_AT_TIME:
+      const currencyData = action.payload;
+
+      const newCurrencyData = {
+        [currencyData.date]: {
+          [currencyData.from.type]: {
+            [currencyData.to.type]: currencyData.to.value,
+          },
+        }
+      };
+
+      return extend(state, {
+        currencies: extend(state.currencies, newCurrencyData)
       });
   }
 
