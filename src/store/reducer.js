@@ -14,10 +14,10 @@ const reducer = (state = initialState, action) => {
         history: [],
       });
     case ActionType.SAVE_RESULT:
-      const newHistory = state.history.slice();
+      const newHistory = state.history.slice(0, 9);
       const {date, from, to} = action.payload;
 
-      newHistory.push({date, from, to});
+      newHistory.unshift({date, from, to});
 
       return extend(state, {
         history: newHistory,
