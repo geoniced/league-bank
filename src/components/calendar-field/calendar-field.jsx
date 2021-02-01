@@ -1,14 +1,13 @@
 import dayjs from "dayjs";
-import {createRef} from "react";
 
-const CalendarField = () => {
+const CalendarField = (props) => {
+  const {calendarRef} = props;
   const currentDate = dayjs().format(`YYYY-MM-DD`);
-  const inputTestRef = createRef();
 
   return (
     <div className="convert-form__calendar-input-wrapper">
       <input
-        ref={inputTestRef}
+        ref={calendarRef}
         defaultValue={currentDate}
         className="convert-form__currency-by-date"
         type="date"
@@ -19,7 +18,7 @@ const CalendarField = () => {
       <svg
         onClick={(evt) => {
           // this code is temporary
-          inputTestRef.current.focus();
+          calendarRef.current.focus();
         }}
         className="convert-form__calendar-icon"
       >

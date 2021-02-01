@@ -1,5 +1,5 @@
 import {HISTORY} from "../const";
-import { extend } from "../utils";
+import {extend} from "../utils";
 import {ActionType} from "./actions";
 
 const initialState = {

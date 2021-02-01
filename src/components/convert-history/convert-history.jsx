@@ -1,14 +1,13 @@
 import dayjs from "dayjs";
-import {useState} from "react";
+import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import {HISTORY} from "../../const";
 import {clearHistory} from "../../store/actions";
 
 const ConvertHistory = (props) => {
-  const [history, setHistory] = useState(HISTORY);
+  const {history, clearHistoryAction} = props;
 
   const onClearHistoryClick = () => {
-    setHistory([]);
+    clearHistoryAction();
   };
 
   return (
@@ -50,6 +49,21 @@ const ConvertHistory = (props) => {
     </section>
   );
 };
+
+ConvertHistory.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.shape({
+    date: PropTypes.string.isRequired,
+    from: PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      type: PropTypes.string.isRequired,
+    }),
+    to: PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      type: PropTypes.string.isRequired,
+    }),
+  })),
+  clearHistoryAction: PropTypes.func.isRequired,
+}
 
 const mapStateToProps = (state) => ({
   history: state.history,

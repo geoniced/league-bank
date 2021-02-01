@@ -7,11 +7,7 @@ export const clearHistory = () => ({
   type: ActionType.CLEAR_HISTORY,
 });
 
-export const saveResult = (date, from, to) => ({
+export const saveResult = (result) => ({
   type: ActionType.SAVE_RESULT,
-  payload: {
-    date,
-    from,
-    to,
-  },
+  payload: result,
 });
