@@ -70,7 +70,7 @@ const CurrencyConvert = (props) => {
     <section className="page-content__currency-convert currency-convert">
       <h3 className="currency-convert visually-hidden">Форма конвертации</h3>
 
-      <form className="currency-convert__convert-form convert-form">
+      <form action="#" className="currency-convert__convert-form convert-form">
         <div className="convert-form__rows-wrapper">
           <div className="convert-form__currency-wrapper">
             <label className="convert-form__label" htmlFor={FIELD_NAMES.MY_CURRENCY.NUMBER}>У меня есть</label>
