@@ -24,17 +24,19 @@ const reducer = (state = initialState, action) => {
       });
     case ActionType.CREATE_RATE_AT_TIME:
       const currencyData = action.payload;
+      const currencyField = `${currencyData.from.type}_${currencyData.to.type}`;
+      const currentCurrencies = Object.assign({}, state.currencies);
 
-      const newCurrencyData = {
-        [currencyData.date]: {
-          [currencyData.from.type]: {
-            [currencyData.to.type]: currencyData.to.value,
-          },
-        }
-      };
+      if (currentCurrencies[currencyField]) {
+        currentCurrencies[currencyField][currencyData.date] = currencyData.to.value;
+      } else {
+        currentCurrencies[currencyField] = {
+          [currencyData.date]: currencyData.to.value,
+        };
+      }
 
       return extend(state, {
-        currencies: extend(state.currencies, newCurrencyData)
+        currencies: extend(state.currencies, currentCurrencies)
       });
   }
 
