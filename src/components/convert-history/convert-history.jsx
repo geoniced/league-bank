@@ -1,66 +1,10 @@
 import dayjs from "dayjs";
 import {useState} from "react";
-import {Currency} from "../../const";
+import {connect} from "react-redux";
+import {HISTORY} from "../../const";
+import {clearHistory} from "../../store/actions";
 
-const HISTORY = [
-  {
-    date: "2020-11-25",
-    from: {
-      value: 1000,
-      type: Currency.RUB,
-    },
-    to: {
-      value: 13.1234,
-      type: Currency.USD,
-    }
-  },
-  {
-    date: "2020-11-25",
-    from: {
-      value: 1000,
-      type: Currency.RUB,
-    },
-    to: {
-      value: 13.1234,
-      type: Currency.USD,
-    }
-  },
-  {
-    date: "2020-11-25",
-    from: {
-      value: 1000,
-      type: Currency.RUB,
-    },
-    to: {
-      value: 13.1234,
-      type: Currency.USD,
-    }
-  },
-  {
-    date: "2020-11-25",
-    from: {
-      value: 1000,
-      type: Currency.RUB,
-    },
-    to: {
-      value: 13.1234,
-      type: Currency.USD,
-    }
-  },
-  {
-    date: "2020-11-25",
-    from: {
-      value: 1000,
-      type: Currency.RUB,
-    },
-    to: {
-      value: 13.1234,
-      type: Currency.USD,
-    }
-  },
-];
-
-const ConvertHistory = () => {
+const ConvertHistory = (props) => {
   const [history, setHistory] = useState(HISTORY);
 
   const onClearHistoryClick = () => {
@@ -105,6 +49,17 @@ const ConvertHistory = () => {
       </button>
     </section>
   );
-}
+};
 
-export default ConvertHistory;
+const mapStateToProps = (state) => ({
+  history: state.history,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  clearHistoryAction() {
+    dispatch(clearHistory());
+  }
+})
+
+export {ConvertHistory};
+export default connect(mapStateToProps, mapDispatchToProps)(ConvertHistory);

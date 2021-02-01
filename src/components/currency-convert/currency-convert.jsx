@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {CurrencyRate} from "../../const";
-import CurrencyTypeField from "../../currency-type-field/currency-type-field";
+import CurrencyTypeField from "../currency-type-field/currency-type-field";
 import CalendarField from "../calendar-field/calendar-field";
 import ConvertNumberInput from "../convert-number-input/convert-number-input";
 

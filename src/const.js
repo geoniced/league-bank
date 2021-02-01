@@ -38,3 +38,61 @@ export const CurrencyRate = {
     [Currency.GBP]: 0.114,
   },
 };
+
+export const HISTORY = [
+  {
+    date: "2020-11-25",
+    from: {
+      value: 1000,
+      type: Currency.RUB,
+    },
+    to: {
+      value: 13.1234,
+      type: Currency.USD,
+    }
+  },
+  {
+    date: "2020-11-25",
+    from: {
+      value: 1000,
+      type: Currency.RUB,
+    },
+    to: {
+      value: 13.1234,
+      type: Currency.USD,
+    }
+  },
+  {
+    date: "2020-11-25",
+    from: {
+      value: 1000,
+      type: Currency.RUB,
+    },
+    to: {
+      value: 13.1234,
+      type: Currency.USD,
+    }
+  },
+  {
+    date: "2020-11-25",
+    from: {
+      value: 1000,
+      type: Currency.RUB,
+    },
+    to: {
+      value: 13.1234,
+      type: Currency.USD,
+    }
+  },
+  {
+    date: "2020-11-25",
+    from: {
+      value: 1000,
+      type: Currency.RUB,
+    },
+    to: {
+      value: 13.1234,
+      type: Currency.USD,
+    }
+  },
+];
