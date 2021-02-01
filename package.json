@@ -24,9 +24,13 @@
   },
   "eslintConfig": {
     "extends": [
+      "htmlacademy/es6",
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "default-case": "off"
+    }
   },
   "browserslist": {
     "production": [

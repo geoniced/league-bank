@@ -6,11 +6,12 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import './scss/style.scss';
 import App from './components/app/app';
 import {reducer} from './store/reducer';
-import(/* webpackPreload: true */ './fonts/roboto-regular.woff2'); // Used for preloading a font
+
+import(/* webpackPreload: true */ `./fonts/roboto-regular.woff2`); // Used for preloading a font
 
 const store = createStore(
-  reducer,
-  composeWithDevTools()
+    reducer,
+    composeWithDevTools()
 );
 
 ReactDOM.render(

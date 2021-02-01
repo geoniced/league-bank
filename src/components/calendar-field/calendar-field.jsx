@@ -16,7 +16,7 @@ const CalendarField = (props) => {
       />
 
       <svg
-        onClick={(evt) => {
+        onClick={() => {
           // this code is temporary
           calendarRef.current.focus();
         }}
@@ -25,7 +25,7 @@ const CalendarField = (props) => {
         <use xlinkHref="#icon-calendar"></use>
       </svg>
     </div>
-  )
+  );
 };
 
 export default CalendarField;

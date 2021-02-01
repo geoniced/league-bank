@@ -34,7 +34,7 @@ const ConvertHistory = (props) => {
                 <p className="convert-history__to">{currencyToText}</p>
               </div>
             </li>
-          )
+          );
         })}
       </ul>
 
@@ -63,7 +63,7 @@ ConvertHistory.propTypes = {
     }),
   })),
   clearHistoryAction: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = (state) => ({
   history: state.history,
@@ -73,7 +73,7 @@ const mapDispatchToProps = (dispatch) => ({
   clearHistoryAction() {
     dispatch(clearHistory());
   }
-})
+});
 
 export {ConvertHistory};
 export default connect(mapStateToProps, mapDispatchToProps)(ConvertHistory);

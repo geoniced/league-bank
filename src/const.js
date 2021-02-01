@@ -4,7 +4,7 @@ export const Currency = {
   EUR: `EUR`,
   GBP: `GBP`,
   CNY: `CNY`,
-}
+};
 
 export const CurrencyRate = {
   [Currency.RUB]: {
@@ -41,7 +41,7 @@ export const CurrencyRate = {
 
 export const HISTORY = [
   {
-    date: "2020-11-25",
+    date: `2020-11-25`,
     from: {
       value: 1000,
       type: Currency.RUB,
@@ -52,7 +52,7 @@ export const HISTORY = [
     }
   },
   {
-    date: "2020-11-25",
+    date: `2020-11-25`,
     from: {
       value: 1000,
       type: Currency.RUB,
@@ -63,7 +63,7 @@ export const HISTORY = [
     }
   },
   {
-    date: "2020-11-25",
+    date: `2020-11-25`,
     from: {
       value: 1000,
       type: Currency.RUB,
@@ -74,7 +74,7 @@ export const HISTORY = [
     }
   },
   {
-    date: "2020-11-25",
+    date: `2020-11-25`,
     from: {
       value: 1000,
       type: Currency.RUB,
@@ -85,7 +85,7 @@ export const HISTORY = [
     }
   },
   {
-    date: "2020-11-25",
+    date: `2020-11-25`,
     from: {
       value: 1000,
       type: Currency.RUB,

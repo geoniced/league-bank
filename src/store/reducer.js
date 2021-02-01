@@ -7,8 +7,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  // eslint-disable-next-line default-case
-  switch(action.type) {
+  switch (action.type) {
     case ActionType.CLEAR_HISTORY:
       return extend(state, {
         history: [],

@@ -24,12 +24,12 @@ const CurrencyTypeField = (props) => {
             value={currencyType}
             key={`currency-type-${i}`}
           >
-              {currencyType}
+            {currencyType}
           </option>
-        )
+        );
       })}
     </select>
-  )
+  );
 };
 
 CurrencyTypeField.propTypes = {

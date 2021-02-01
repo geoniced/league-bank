@@ -18,7 +18,7 @@ const ConvertNumberInput = (props) => {
       name={fieldId}
       readOnly={readOnly}
     />
-  )
+  );
 };
 
 ConvertNumberInput.propTypes = {

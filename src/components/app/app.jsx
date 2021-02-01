@@ -10,6 +10,6 @@ const App = () => {
       <ConvertHistory />
     </div>
   );
-}
+};
 
 export default App;
