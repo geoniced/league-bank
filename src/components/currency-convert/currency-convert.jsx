@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {CurrencyRate} from "../../const";
 import CurrencyTypeField from "../../currency-type-field/currency-type-field";
+import CalendarField from "../calendar-field/calendar-field";
 import ConvertNumberInput from "../convert-number-input/convert-number-input";
 
 const FIELD_NAMES = {
@@ -86,13 +87,7 @@ const CurrencyConvert = () => {
         </div>
 
         <div className="convert-form__rows-wrapper">
-          <div className="convert-form__calendar-input-wrapper">
-            <input className="convert-form__currency-by-date" type="date" name="currency-by-date" id="currency-by-date" />
-            <svg className="convert-form__calendar-icon">
-              <use xlinkHref="#icon-calendar"></use>
-            </svg>
-          </div>
-
+          <CalendarField />
 
           <button className="convert-form__save button" type="submit">Сохранить результат</button>
         </div>
