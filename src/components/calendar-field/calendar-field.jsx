@@ -1,15 +1,24 @@
-import dayjs from "dayjs";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/themes/light.css";
+import {createRef, useEffect} from "react";
 
 const CalendarField = (props) => {
-  const {calendarRef, changeHandler} = props;
-  const currentDate = dayjs().format(`YYYY-MM-DD`);
+  const {value, changeHandler} = props;
+
+  const calendarRef = createRef();
+
+  useEffect(() => {
+    flatpickr(calendarRef.current, {
+      defaultDate: value,
+      dateFormat: `j.n.Y`,
+      onChange: changeHandler,
+    });
+  }, []);
 
   return (
     <div className="convert-form__calendar-input-wrapper">
       <input
-        onChange={changeHandler}
         ref={calendarRef}
-        defaultValue={currentDate}
         className="convert-form__currency-by-date"
         type="date"
         name="currency-by-date"
@@ -17,10 +26,6 @@ const CalendarField = (props) => {
       />
 
       <svg
-        onClick={() => {
-          // this code is temporary
-          calendarRef.current.focus();
-        }}
         className="convert-form__calendar-icon"
       >
         <use xlinkHref="#icon-calendar"></use>

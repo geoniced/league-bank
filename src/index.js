@@ -28,9 +28,6 @@ const store = createStore(
 Promise.all([
   store.dispatch(loadCurrency(formatDateNowDashed(), Currency.RUB, Currency.USD))
 ])
-.then((response) => {
-  console.log(response);
-})
 .then(() => {
   ReactDOM.render(
       <React.StrictMode>

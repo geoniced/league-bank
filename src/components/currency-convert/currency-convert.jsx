@@ -67,8 +67,8 @@ const CurrencyConvert = (props) => {
     changeConvertedTypeAction(evt.target.value);
   };
 
-  const onCalendarChange = (evt) => {
-    const currentValue = formatDateDashed(evt.target.value);
+  const onCalendarChange = (date) => {
+    const currentValue = formatDateDashed(date);
 
     changeCalendarDateAction(currentValue);
   };
