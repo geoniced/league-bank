@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import {roundToFourDecimals} from '../../utils';
+import PropTypes from "prop-types";
+import {roundToFourDecimals} from "../../utils";
 
 const ConvertNumberInput = (props) => {
   const {

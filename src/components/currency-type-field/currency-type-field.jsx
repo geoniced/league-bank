@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import {Currency} from '../../const';
+import PropTypes from "prop-types";
+import {Currency} from "../../const";
 
 const CurrencyTypeField = (props) => {
   const {
