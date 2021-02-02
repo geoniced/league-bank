@@ -44,14 +44,16 @@ const ConvertHistory = (props) => {
         })}
       </ul>
 
-      <button
-        onClick={onClearHistoryClick}
-        className="convert-history__clear
-        button"
-        type="button"
-      >
-        Очистить историю
-      </button>
+      {history.length > 0 && (
+        <button
+          onClick={onClearHistoryClick}
+          className="convert-history__clear
+          button"
+          type="button"
+        >
+          Очистить историю
+        </button>
+      )}
     </section>
   );
 };
