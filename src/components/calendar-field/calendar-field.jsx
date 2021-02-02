@@ -1,12 +1,13 @@
 import dayjs from "dayjs";
 
 const CalendarField = (props) => {
-  const {calendarRef} = props;
+  const {calendarRef, changeHandler} = props;
   const currentDate = dayjs().format(`YYYY-MM-DD`);
 
   return (
     <div className="convert-form__calendar-input-wrapper">
       <input
+        onChange={changeHandler}
         ref={calendarRef}
         defaultValue={currentDate}
         className="convert-form__currency-by-date"

@@ -1,12 +1,13 @@
-import {createRef, useState} from "react";
+import {useEffect, useState} from "react";
 import PropTypes from "prop-types";
-import {Currency, formatDateDashed} from "../../const";
+import {formatDateDashed} from "../../const";
 import CurrencyTypeField from "../currency-type-field/currency-type-field";
 import CalendarField from "../calendar-field/calendar-field";
 import ConvertNumberInput from "../convert-number-input/convert-number-input";
 import {connect} from "react-redux";
-import {saveResult} from "../../store/actions";
+import {changeCalendarDate, changeConvertedType, changeMyType, saveResult} from "../../store/actions";
 import {loadCurrency} from "../../store/api-actions";
+import {getCalendarValue, getConvertedType, getCurrencies, getMyType} from "../../store/selectors";
 
 const FIELD_NAMES = {
   MY_CURRENCY: {
@@ -19,61 +20,64 @@ const FIELD_NAMES = {
   },
 };
 
-const isLoadNeeded = (currencies, field, date) => {
+const doesCurrencyExist = (currencies, field, date) => {
   return currencies[field] && currencies[field][date];
 };
 
 const CurrencyConvert = (props) => {
-  const {currencies, saveResultAction, changeCurrencyType} = props;
+  const {
+    currencies,
+    myCurrencyType,
+    convertedCurrencyType,
+    chosenDate,
+    saveResultAction,
+    changeCurrencyType,
+    changeCalendarDateAction,
+    changeMyTypeAction,
+    changeConvertedTypeAction,
+  } = props;
 
-  const calendarRef = createRef();
 
   const [myCurrency, setMyCurrency] = useState(0);
-  const [convertedCurrency, setConvertedCurrency] = useState(0);
 
-  const [myCurrencyType, setMyCurrencyType] = useState(Currency.RUB);
-  const [convertedCurrencyType, setConvertedCurrencyType] = useState(Currency.USD);
+  const convertationField = `${myCurrencyType}_${convertedCurrencyType}`;
+  let convertedCurrency = 0;
+  if (doesCurrencyExist(currencies, convertationField, chosenDate)) {
+    convertedCurrency = myCurrency * currencies[convertationField][chosenDate];
+  }
+
+  useEffect(() => {
+    if (!doesCurrencyExist(currencies, convertationField, chosenDate)) {
+      changeCurrencyType(formatDateDashed(chosenDate), myCurrencyType, convertedCurrencyType);
+    }
+  }, [convertedCurrencyType, myCurrencyType, chosenDate, convertationField, currencies, changeCurrencyType]);
+
 
   const onMyCurrencyChange = (evt) => {
     const currentValue = Number(evt.target.value);
-    const chosenDate = formatDateDashed(calendarRef.current.value);
-    const convertationField = `${myCurrencyType}_${convertedCurrencyType}`;
-
 
     setMyCurrency(currentValue);
-
-    setConvertedCurrency(currentValue * currencies[convertationField][chosenDate]);
   };
 
   const onMyCurrencyTypeChange = (evt) => {
-    const currentValue = evt.target.value;
-    const chosenDate = formatDateDashed(calendarRef.current.value);
-    const convertationField = `${currentValue}_${convertedCurrencyType}`;
-
-    setMyCurrencyType(currentValue);
-
-    if (!isLoadNeeded(currencies, convertationField, chosenDate)) {
-      changeCurrencyType(formatDateDashed(calendarRef.current.value), currentValue, convertedCurrencyType);
-    }
+    changeMyTypeAction(evt.target.value);
   };
 
   const onConvertedCurrencyTypeChange = (evt) => {
-    const currentValue = evt.target.value;
-    const chosenDate = formatDateDashed(calendarRef.current.value);
-    const convertationField = `${myCurrencyType}_${currentValue}`;
+    changeConvertedTypeAction(evt.target.value);
+  };
 
-    setConvertedCurrencyType(currentValue);
+  const onCalendarChange = (evt) => {
+    const currentValue = formatDateDashed(evt.target.value);
 
-    if (!isLoadNeeded(currencies, convertationField, chosenDate)) {
-      changeCurrencyType(formatDateDashed(calendarRef.current.value), myCurrencyType, currentValue);
-    }
+    changeCalendarDateAction(currentValue);
   };
 
   const onSaveResultButtonClick = (evt) => {
     evt.preventDefault();
 
     const convertationResult = {
-      date: calendarRef.current.value,
+      date: chosenDate,
       from: {
         value: myCurrency,
         type: myCurrencyType,
@@ -134,7 +138,8 @@ const CurrencyConvert = (props) => {
 
         <div className="convert-form__rows-wrapper">
           <CalendarField
-            calendarRef={calendarRef}
+            changeHandler={onCalendarChange}
+            value={chosenDate}
           />
 
           <button
@@ -157,15 +162,27 @@ CurrencyConvert.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  currencies: state.currencies,
+  currencies: getCurrencies(state),
+  myCurrencyType: getMyType(state),
+  convertedCurrencyType: getConvertedType(state),
+  chosenDate: getCalendarValue(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   saveResultAction(date, from, to) {
     dispatch(saveResult(date, from, to));
   },
-  changeCurrencyType(date, typeFrom, typeTo) {
-    dispatch(loadCurrency(date, typeFrom, typeTo));
+  changeCurrencyType(date, typeFrom, typeTo, action) {
+    dispatch(loadCurrency(date, typeFrom, typeTo, action));
+  },
+  changeCalendarDateAction(date) {
+    dispatch(changeCalendarDate(date));
+  },
+  changeMyTypeAction(type) {
+    dispatch(changeMyType(type));
+  },
+  changeConvertedTypeAction(type) {
+    dispatch(changeConvertedType(type));
   },
 });
 

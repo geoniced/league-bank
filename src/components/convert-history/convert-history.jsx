@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {clearHistory} from "../../store/actions";
+import {getHistory} from "../../store/selectors";
 
 const ConvertHistory = (props) => {
   const {history, clearHistoryAction} = props;
@@ -66,7 +67,7 @@ ConvertHistory.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  history: state.history,
+  history: getHistory(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

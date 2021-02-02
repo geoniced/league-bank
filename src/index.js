@@ -6,7 +6,7 @@ import {applyMiddleware, createStore} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import './scss/style.scss';
 import App from './components/app/app';
-import {reducer} from './store/reducer';
+import rootReducer from './store/root-reducer';
 import {createAPI} from './services/api';
 import thunk from 'redux-thunk';
 import {loadCurrency} from './store/api-actions';
@@ -19,7 +19,7 @@ const api = createAPI(
 );
 
 const store = createStore(
-    reducer,
+    rootReducer,
     composeWithDevTools(
         applyMiddleware(thunk.withExtraArgument(api))
     )
