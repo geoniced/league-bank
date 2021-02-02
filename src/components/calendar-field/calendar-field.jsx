@@ -22,6 +22,7 @@ const CalendarField = (props) => {
 
   return (
     <div className="convert-form__calendar-input-wrapper">
+      <label className="visually-hidden" htmlFor="currency-by-date">Взять курс за определенный день</label>
       <input
         ref={calendarRef}
         className="convert-form__currency-by-date"
