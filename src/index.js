@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from "react";
 import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
@@ -15,9 +14,7 @@ import {formatDateDashed} from "./utils";
 
 import(/* webpackPreload: true */ `./fonts/roboto-regular.woff2`); // Used for preloading a font
 
-const api = createAPI(
-    (response, message) => console.log(`${response}: ${message}`)
-);
+const api = createAPI();
 
 const store = createStore(
     rootReducer,
