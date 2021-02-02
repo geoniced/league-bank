@@ -3,7 +3,7 @@ import {APIRoute} from "../const";
 import {API_KEY} from "../services/api";
 import {createRateAtTime} from "./actions";
 
-export const loadCurrency = (date, typeFrom, typeTo, action) => (dispatch, _getStore, api) => (
+export const loadCurrency = (date, typeFrom, typeTo) => (dispatch, _getStore, api) => (
   api.get(`${APIRoute.CONVERT}?q=${typeFrom}_${typeTo}&compact=ultra&date=${date}&apiKey=${API_KEY}`)
     .then((response) => {
       const {data} = response;
@@ -14,11 +14,6 @@ export const loadCurrency = (date, typeFrom, typeTo, action) => (dispatch, _getS
         from: {type: typeFrom},
         to: {type: typeTo, value: convertedValue}
       }));
-    })
-    .then(() => {
-      if (action) {
-        dispatch(action);
-      }
     })
     .catch((err) => {
       console.log(err);

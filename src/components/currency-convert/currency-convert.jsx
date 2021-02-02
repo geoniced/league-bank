@@ -180,8 +180,8 @@ const mapDispatchToProps = (dispatch) => ({
   saveResultAction(date, from, to) {
     dispatch(saveResult(date, from, to));
   },
-  changeCurrencyType(date, typeFrom, typeTo, action) {
-    dispatch(loadCurrency(date, typeFrom, typeTo, action));
+  changeCurrencyType(date, typeFrom, typeTo) {
+    dispatch(loadCurrency(date, typeFrom, typeTo));
   },
   changeCalendarDateAction(date) {
     dispatch(changeCalendarDate(date));
