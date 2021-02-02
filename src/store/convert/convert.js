@@ -1,11 +1,11 @@
 import {ActionType} from "../actions";
-import {Currency, formatDateNowDashed} from "../../const";
+import {Currency, formatDateDashed} from "../../const";
 import {extend} from "../../utils";
 
 const initialState = {
   myType: Currency.RUB,
   convertedType: Currency.USD,
-  date: formatDateNowDashed(),
+  date: formatDateDashed(),
 };
 
 const convert = (state = initialState, action) => {

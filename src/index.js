@@ -10,7 +10,7 @@ import rootReducer from './store/root-reducer';
 import {createAPI} from './services/api';
 import thunk from 'redux-thunk';
 import {loadCurrency} from './store/api-actions';
-import {Currency, formatDateNowDashed} from './const';
+import {Currency, formatDateDashed} from './const';
 
 import(/* webpackPreload: true */ `./fonts/roboto-regular.woff2`); // Used for preloading a font
 
@@ -26,7 +26,7 @@ const store = createStore(
 );
 
 Promise.all([
-  store.dispatch(loadCurrency(formatDateNowDashed(), Currency.RUB, Currency.USD))
+  store.dispatch(loadCurrency(formatDateDashed(), Currency.RUB, Currency.USD))
 ])
 .then(() => {
   ReactDOM.render(

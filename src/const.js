@@ -4,8 +4,15 @@ export const APIRoute = {
   CONVERT: `/convert`
 };
 
-export const formatDateNowDashed = () => dayjs().format(`YYYY-MM-DD`);
 export const formatDateDashed = (date) => dayjs(date).format(`YYYY-MM-DD`);
+export const formatDateDotted = (date) => dayjs(date).format(`D.M.YYYY`);
+
+const ALLOWED_DATE_RANGE = 7;
+
+export const getSevenDaysBack = () => {
+  const today = dayjs().startOf(`day`);
+  return formatDateDotted(today.subtract(ALLOWED_DATE_RANGE, `day`));
+};
 
 export const Currency = {
   RUB: `RUB`,

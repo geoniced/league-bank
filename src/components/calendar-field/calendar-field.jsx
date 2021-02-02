@@ -1,16 +1,20 @@
+import PropTypes from "prop-types";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/themes/light.css";
 import {createRef, useEffect} from "react";
+import {formatDateDotted, getSevenDaysBack} from "../../const";
 
 const CalendarField = (props) => {
-  const {value, changeHandler} = props;
+  const {changeHandler} = props;
 
   const calendarRef = createRef();
 
   useEffect(() => {
     flatpickr(calendarRef.current, {
-      defaultDate: value,
+      defaultDate: formatDateDotted(),
       dateFormat: `j.n.Y`,
+      minDate: getSevenDaysBack(),
+      maxDate: formatDateDotted(),
       onChange: changeHandler,
     });
   }, []);
@@ -32,6 +36,10 @@ const CalendarField = (props) => {
       </svg>
     </div>
   );
+};
+
+CalendarField.propTypes = {
+  changeHandler: PropTypes.func.isRequired,
 };
 
 export default CalendarField;
