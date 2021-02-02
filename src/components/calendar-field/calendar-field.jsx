@@ -8,9 +8,10 @@ const CalendarField = (props) => {
   const {changeHandler} = props;
 
   const calendarRef = createRef();
+  let calendarInstance;
 
   useEffect(() => {
-    flatpickr(calendarRef.current, {
+    calendarInstance = flatpickr(calendarRef.current, {
       defaultDate: formatDateDotted(),
       dateFormat: `j.n.Y`,
       minDate: getSevenDaysBack(),
@@ -31,6 +32,7 @@ const CalendarField = (props) => {
 
       <svg
         className="convert-form__calendar-icon"
+        onClick={(evt) => calendarInstance.toggle()}
       >
         <use xlinkHref="#icon-calendar"></use>
       </svg>
