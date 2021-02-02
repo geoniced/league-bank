@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {clearHistory} from "../../store/actions";
 import {getHistory} from "../../store/selectors";
+import {roundToFourDecimals} from "../../utils";
+
+const makeCurrencyText = (amount, type) => {
+  return `${roundToFourDecimals(amount)} ${type}`;
+};
 
 const ConvertHistory = (props) => {
   const {history, clearHistoryAction} = props;
@@ -18,8 +23,8 @@ const ConvertHistory = (props) => {
       <ul className="convert-history__list">
         {history.map((item, i) => {
           const formattedDate = dayjs(item.date).format(`DD.MM.YYYY`);
-          const currencyFromText = `${item.from.value} ${item.from.type}`;
-          const currencyToText = `${item.to.value} ${item.to.type}`;
+          const currencyFromText = makeCurrencyText(item.from.value, item.from.type);
+          const currencyToText = makeCurrencyText(item.to.value, item.to.type);
 
           return (
             <li key={`convert-item-${i}`} className="convert-history__item">

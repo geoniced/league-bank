@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import {roundToFourDecimals} from '../../utils';
 
 const ConvertNumberInput = (props) => {
   const {
@@ -11,7 +12,7 @@ const ConvertNumberInput = (props) => {
   return (
     <input
       onChange={changeHandler}
-      value={value}
+      value={roundToFourDecimals(value)}
       className="convert-form__number-input"
       type="number"
       id={fieldId}
