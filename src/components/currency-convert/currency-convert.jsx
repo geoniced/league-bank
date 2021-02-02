@@ -164,7 +164,7 @@ const CurrencyConvert = (props) => {
 };
 
 CurrencyConvert.propTypes = {
-  currencies: PropTypes.object.isRequired,
+  currencies: PropTypes.objectOf(PropTypes.objectOf(PropTypes.number)).isRequired,
   myCurrencyType: PropTypes.string.isRequired,
   convertedCurrencyType: PropTypes.string.isRequired,
   chosenDate: PropTypes.string.isRequired,
