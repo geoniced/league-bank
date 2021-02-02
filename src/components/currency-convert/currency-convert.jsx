@@ -165,8 +165,14 @@ const CurrencyConvert = (props) => {
 
 CurrencyConvert.propTypes = {
   currencies: PropTypes.object.isRequired,
+  myCurrencyType: PropTypes.string.isRequired,
+  convertedCurrencyType: PropTypes.string.isRequired,
+  chosenDate: PropTypes.string.isRequired,
   saveResultAction: PropTypes.func.isRequired,
   changeCurrencyType: PropTypes.func.isRequired,
+  changeCalendarDateAction: PropTypes.func.isRequired,
+  changeMyTypeAction: PropTypes.func.isRequired,
+  changeConvertedTypeAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
