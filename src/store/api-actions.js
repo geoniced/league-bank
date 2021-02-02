@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {APIRoute} from "../const";
 import {API_KEY} from "../services/api";
 import {createRateAtTime} from "./actions";
@@ -16,6 +15,6 @@ export const loadCurrency = (date, typeFrom, typeTo) => (dispatch, _getStore, ap
       }));
     })
     .catch((err) => {
-      console.log(err);
+      throw err;
     })
 );
