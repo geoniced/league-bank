@@ -10,7 +10,8 @@ import rootReducer from './store/root-reducer';
 import {createAPI} from './services/api';
 import thunk from 'redux-thunk';
 import {loadCurrency} from './store/api-actions';
-import {Currency, formatDateDashed} from './const';
+import {Currency} from './const';
+import {formatDateDashed} from './utils';
 
 import(/* webpackPreload: true */ `./fonts/roboto-regular.woff2`); // Used for preloading a font
 

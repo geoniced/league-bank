@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import PropTypes from "prop-types";
-import {formatDateDashed} from "../../const";
+import {formatDateDashed} from "../../utils";
 import CurrencyTypeField from "../currency-type-field/currency-type-field";
 import CalendarField from "../calendar-field/calendar-field";
 import ConvertNumberInput from "../convert-number-input/convert-number-input";

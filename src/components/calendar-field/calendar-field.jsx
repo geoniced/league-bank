@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/themes/light.css";
 import {createRef, useEffect} from "react";
-import {formatDateDotted, getSevenDaysBack} from "../../const";
+import {formatDateDotted, getSevenDaysBack} from "../../utils";
 
 const CalendarField = (props) => {
   const {changeHandler} = props;

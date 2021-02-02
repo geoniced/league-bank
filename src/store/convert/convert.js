@@ -1,6 +1,6 @@
 import {ActionType} from "../actions";
-import {Currency, formatDateDashed} from "../../const";
-import {extend} from "../../utils";
+import {Currency} from "../../const";
+import {extend, formatDateDashed} from "../../utils";
 
 const initialState = {
   myType: Currency.RUB,
