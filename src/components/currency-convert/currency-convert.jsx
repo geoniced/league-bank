@@ -11,12 +11,18 @@ import {getCalendarValue, getConvertedType, getCurrencies, getMyType} from "../.
 
 const FIELD_NAMES = {
   MY_CURRENCY: {
-    NUMBER: `my-currency`,
-    SELECT: `my-currency-type`,
+    number: `my-currency`,
+    select: {
+      fieldId: `my-currency-type`,
+      labelText: `Тип моей валюты`,
+    },
   },
   CONVERTED_CURRENCY: {
-    NUMBER: `converted-currency`,
-    SELECT: `converted-currency-type`,
+    number: `converted-currency`,
+    select: {
+      fieldId: `converted-currency-type`,
+      labelText: `Тип желаемой валюты`,
+    },
   },
 };
 
@@ -98,18 +104,19 @@ const CurrencyConvert = (props) => {
       <form action="#" className="currency-convert__convert-form convert-form">
         <div className="convert-form__rows-wrapper">
           <div className="convert-form__currency-wrapper">
-            <label className="convert-form__label" htmlFor={FIELD_NAMES.MY_CURRENCY.NUMBER}>У меня есть</label>
+            <label className="convert-form__label" htmlFor={FIELD_NAMES.MY_CURRENCY.number}>У меня есть</label>
 
             <div className="convert-form__currency-and-type-wrapper">
               <ConvertNumberInput
                 changeHandler={onMyCurrencyChange}
                 value={myCurrency}
-                fieldId={FIELD_NAMES.MY_CURRENCY.NUMBER}
+                fieldId={FIELD_NAMES.MY_CURRENCY.number}
               />
               <CurrencyTypeField
                 changeHandler={onMyCurrencyTypeChange}
                 defaultValue={myCurrencyType}
-                fieldId={FIELD_NAMES.MY_CURRENCY.SELECT}
+                fieldId={FIELD_NAMES.MY_CURRENCY.select.fieldId}
+                labelText={FIELD_NAMES.MY_CURRENCY.select.labelText}
               />
             </div>
           </div>
@@ -119,18 +126,19 @@ const CurrencyConvert = (props) => {
           </svg>
 
           <div className="convert-form__currency-wrapper">
-            <label className="convert-form__label" htmlFor={FIELD_NAMES.CONVERTED_CURRENCY.NUMBER}>Хочу приобрести</label>
+            <label className="convert-form__label" htmlFor={FIELD_NAMES.CONVERTED_CURRENCY.number}>Хочу приобрести</label>
 
             <div className="convert-form__currency-and-type-wrapper">
               <ConvertNumberInput
                 value={convertedCurrency}
-                fieldId={FIELD_NAMES.CONVERTED_CURRENCY.NUMBER}
+                fieldId={FIELD_NAMES.CONVERTED_CURRENCY.number}
                 readOnly
               />
               <CurrencyTypeField
                 changeHandler={onConvertedCurrencyTypeChange}
                 defaultValue={convertedCurrencyType}
-                fieldId={FIELD_NAMES.CONVERTED_CURRENCY.SELECT}
+                fieldId={FIELD_NAMES.CONVERTED_CURRENCY.select.fieldId}
+                labelText={FIELD_NAMES.CONVERTED_CURRENCY.select.labelText}
               />
             </div>
           </div>
