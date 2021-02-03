@@ -5,20 +5,20 @@ import {createRef, useEffect, useRef} from "react";
 import {formatDateDotted, getSevenDaysBack} from "../../utils";
 
 const CalendarField = (props) => {
-  const {changeHandler} = props;
+  const {value, changeHandler} = props;
 
   const calendarRef = createRef();
   const calendarFlatpickrInstance = useRef(null);
 
   useEffect(() => {
     calendarFlatpickrInstance.current = flatpickr(calendarRef.current, {
-      defaultDate: formatDateDotted(),
+      defaultDate: formatDateDotted(value),
       dateFormat: `j.n.Y`,
       minDate: getSevenDaysBack(),
       maxDate: formatDateDotted(),
       onChange: changeHandler,
     });
-  }, [calendarRef, changeHandler]);
+  }, [calendarRef, changeHandler, value]);
 
   const onIconClick = () => calendarFlatpickrInstance.current.toggle();
 
@@ -44,6 +44,7 @@ const CalendarField = (props) => {
 };
 
 CalendarField.propTypes = {
+  value: PropTypes.string.isRequired,
   changeHandler: PropTypes.func.isRequired,
 };
 
