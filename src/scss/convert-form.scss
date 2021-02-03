@@ -88,6 +88,7 @@
   height: 60px;
   padding-top: 6px;
   padding-right: 72px;
+  padding-left: 44px;
 
   font-size: 24px;
   line-height: 34px;
@@ -98,7 +99,6 @@
   appearance: none;
 }
 
-// TODO: Solution until custom JS datepicker
 .convert-form__currency-by-date::-webkit-inner-spin-button,
 .convert-form__currency-by-date::-webkit-calendar-picker-indicator {
   display: none;
@@ -112,6 +112,8 @@
 
   width: 39px;
   height: 42px;
+
+  cursor: pointer;
 
   @include basic-interactions;
 }
